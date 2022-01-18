@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+{% block scripts %}
+<script type="text/javascript" src="{{ url_for('static', filename='javascript/home.js') }}"></script>
+<script>
+    $(function () {
+        render({{ size }}, {{ seed }});
+        })
+</script>
+{% endblock %}
+
+{% block content %}
+
+    <form class="mb-3" action="" method="get">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Number of rows to load</label>
+            <input type="text" class="form-control" id="formSize" name="size" placeholder="20" value="20">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Seed</label>
+            <input type="text" class="form-control" id="formSeed" name="seed" placeholder="1" value="1">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div class="flex-grow-1 cloud reviews-cloud">
+        <table class="table table-striped table-bordered fakedata-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">Id</th>
+                    <th scope="col" class="text-center">Initials</th>
+                    <th scope="col" class="text-center">Address</th>
+                    <th scope="col" class="text-center">Tel-number</th>
+                </tr>
+            </thead>
+            <tbody class="fakedata-table-body">
+                <tr>
+                    <th scope="col" class="text-center">Loading...</th>
+                    <th scope="col" class="text-center">Loading...</th>
+                    <th scope="col" class="text-center">Loading...</th>
+                    <th scope="col" class="text-center">Loading...</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
