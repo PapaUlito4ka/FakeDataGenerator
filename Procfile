@@ -1,1 +1,1 @@
-web: gunicorn fakedatagenerator.wsgi --log-file -
+web: gunicorn main:app
