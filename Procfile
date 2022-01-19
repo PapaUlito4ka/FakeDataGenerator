@@ -1,1 +1,1 @@
-web: gunicorn reviewch.wsgi --log-file -
+web: gunicorn fakedatagenerator.wsgi --log-file -
